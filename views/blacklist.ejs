@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/blacklist.css">
+  <title>Document</title>
+</head>
+<body>
+  <%- include('partials/header')%>
+  <nav class="navpic">
+  <img src="../images/info1.jpg" />
+  </nav>
+  <form action="/" class="blacklistForm" method="post">
+    <p><label for="blacklistreden">reden blacklist aanpassen:</label></p>
+    <textarea id="blacklistreden" name="reden" rows="4" cols="50">Hier komt de reden waarom je deze avatar hebt geblacklist</textarea>
+    <br>
+    <input type="submit" value="Submit">
+    <input type="button" value="verwijderen uit blacklist">
+  </form>
+  <%- include('partials/footer')%>
+  
+</body>
+</html>

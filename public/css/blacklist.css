@@ -1,0 +1,12 @@
+html body{
+  background-color: #2196F3;
+}
+.navpic img{
+  border: 25%;
+  height: 20%;
+  width: 10%;
+  border-radius: 50%;
+}
+.blacklistForm{
+  text-align: center;
+}

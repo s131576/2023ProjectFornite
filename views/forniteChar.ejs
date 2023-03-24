@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/infoPage.css">
+</head>
+<body>
+<%- include('partials/header')%>
+<h2><%=character.item.name%></h2>
+<img src="<%= character.item.images.icon %>" class="profile__image" />
+<ul name="avatarInformatieDB">
+  <% if(character.item.desriptition !=""){ %> 
+  <li>
+      <%= character.item.desriptition %>
+  </li>
+  <%}%>
+  <% if(character.item.type !=""){ %> 
+  <li>
+      <%= character.item.type %>.
+  </li>
+  <%}%>
+  <% if(character.item.rarity !=""){ %> 
+  <li>
+      <%= character.item.rarity %>.
+  </li>
+  <%}%>
+  <% if(character.item.series !=""){ %> 
+  <li>
+      <%= character.item.series %>
+  </li>
+  <%}%>
+</ul>
+<a href="/forniteHome">Go back</a>
+
+<div class="wrapper">
+  <span class="minus">-</span>
+  <span class="num">0</span>
+  <span class="plus">+</span>
+</div>
+
+<form action="/action_page.php">
+  <label for="wins" class="textForm">Wins   (min 0, max 20)  </label>
+  <input type="number" id="quantity" name="quantity" min="0" max="20" placeholder="0"> <br>
+  <label for="loses" class="textForm">Loses(max 0, min -20)</label>
+  <input type="number" id="quantity" name="quantity" min="-20" max="0" placeholder="0"> <br>
+  <input type="reset" value="Reset">
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+const plus=document.querySelector(".plus"),
+minus=document.querySelector(".minus"),
+num=document.querySelector(".num");
+
+let total=0;
+plus.addEventListener("click",()=>{
+  if(total<3){
+  total++;
+  total=(total<3)?+total:total
+  num.innerText=total;
+  }
+});
+minus.addEventListener("click",()=>{
+ if(total>-3){
+  total--;
+  total=(total<=3)?+total:total
+  num.innerText=total;
+ }
+});
+</script>
+<%- include('partials/footer')%>
+</body>
+</html>

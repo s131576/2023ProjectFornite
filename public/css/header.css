@@ -1,0 +1,11 @@
+.header{
+  list-style-type: none;
+  gap: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  float: right;
+}
+.header li a{
+  color:white;
+}
